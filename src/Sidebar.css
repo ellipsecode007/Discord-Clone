@@ -37,3 +37,35 @@
     display: flex;
     align-items: center;
 }
+.sidebar___voice, .sidebar___profile{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: gray;
+    background-color: #2f3135;    
+    padding: 10px;
+    border-top: 1px solid gray;
+}
+.sidebar___voiceInfo{
+    flex: 1;
+    padding: 10px;
+}
+.sidebar___voiceIcon{
+    color: green;
+}
+.sidebar___voiceInfo>h3{
+    color: green;
+}
+.sidebar___voiceInfo>p{
+    font-size: smaller;
+}
+.sidebar___voiceInfo>.MuiSvgIcon-root{
+    padding: 10px;
+}
+.sidebar___profileInfo{
+    flex: 1;
+    padding: 10px;
+}
+.sidebar___profileIcons>.MuiSvgIcon-root{
+    padding: 10px;
+}

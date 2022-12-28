@@ -13,7 +13,6 @@ import SettingsIcon from '@mui/icons-material/Settings';
 function Sidebar() {
   return (
     <div className='sidebar'>
-    <h2>Sidebar</h2>
     <div className='sidebar___top'>
       <h3>Ellipse Gaming</h3>
       <ExpandMoreIcon></ExpandMoreIcon>

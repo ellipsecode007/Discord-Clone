@@ -20,7 +20,7 @@ function ChatHeader() {
             <NotificationsIcon/>
             <PeopleAltIcon/>
             <div className="chatHeader___search">
-                <input placeHolder='Search'></input>
+                <input placeholder='Search'></input>
                 <SearchIcon></SearchIcon>
             </div>
             <SendRoundedIcon></SendRoundedIcon>

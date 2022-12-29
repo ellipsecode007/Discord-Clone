@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import AddIcon from '@mui/icons-material/Add';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import './Sidebar.css';
@@ -9,8 +9,32 @@ import { Avatar } from '@mui/material';
 import MicIcon from '@mui/icons-material/Mic';
 import HeadsetIcon from '@mui/icons-material/Headset';
 import SettingsIcon from '@mui/icons-material/Settings';
+import { selectUser } from './features/userSlice';
+import { useSelector } from 'react-redux';
+import db, { auth } from './firebase';
 
 function Sidebar() {
+  const user =  useSelector(selectUser);
+  const [channels, setChannels] = useState([]);
+  useEffect(() =>{
+      db.collection('channels').onSnapshot(snapshot => (
+        setChannels(snapshot.docs.map(doc =>({
+          id:doc.id,
+          channel: doc.data(),
+        })))
+      ));
+  },[])
+
+  const handleAddChannel = () => {
+    const channelName = prompt("Channel Name");
+    if(channelName)
+    {
+      db.collection('channels').add({
+        channelName: channelName,
+      })
+    }
+  };
+  
   return (
     <div className='sidebar'>
     <div className='sidebar___top'>
@@ -24,11 +48,13 @@ function Sidebar() {
           </ExpandMoreIcon>
           <h4>Text Channels</h4>
         </div>
-        <AddIcon className='sidebar___addChannels'>
+        <AddIcon onClick={handleAddChannel} className='sidebar___addChannels'>
         </AddIcon>
       </div>
       <div className="sidebar___channelsList">
-      <SidebarChannels></SidebarChannels>
+        {channels.map(({id , channel}) =>(
+          <SidebarChannels key={id} id = {id} channelName={channel.channelName}></SidebarChannels>
+        ))}
     </div>
     </div>
     <div className="sidebar___voice">
@@ -43,11 +69,11 @@ function Sidebar() {
     </div>
     </div>
     <div className="sidebar___profile">
-      <Avatar 
-      src= "https://i.pinimg.com/736x/65/c4/3f/65c43fc01c0ec482be114b9fb011b489.jpg"></Avatar>
+      <Avatar onClick = { ()=>auth.signOut()} 
+      src= {user.photo} alt = "https://i.pinimg.com/736x/65/c4/3f/65c43fc01c0ec482be114b9fb011b489.jpg"></Avatar>
       <div className="sidebar___profileInfo">
-        <h3>Ellipse</h3>
-        <p>#2512</p>
+        <h3>{user.displayName}</h3>
+        <p>#{user.uid.substring(0,5)}</p>
       </div>
       <div className="sidebar___profileIcons">
         <MicIcon></MicIcon>

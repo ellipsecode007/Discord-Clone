@@ -3,8 +3,6 @@ import AddIcon from '@mui/icons-material/Add';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import './Sidebar.css';
 import SidebarChannels from './SidebarChannels';
-import SignalCellularAltIcon from '@mui/icons-material/SignalCellularAlt';
-import CallIcon from '@mui/icons-material/Call';
 import { Avatar } from '@mui/material';
 import MicIcon from '@mui/icons-material/Mic';
 import HeadsetIcon from '@mui/icons-material/Headset';

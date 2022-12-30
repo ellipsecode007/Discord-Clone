@@ -37,4 +37,8 @@
 }
 .chat___messages{
     flex: 1;
+    /* overflow: scroll; */
 }
+/* .chat___messages::-webkit-scrollbar{
+    display : none;
+} */

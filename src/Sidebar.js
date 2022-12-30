@@ -57,7 +57,7 @@ function Sidebar() {
         ))}
     </div>
     </div>
-    <div className="sidebar___voice">
+    {/* <div className="sidebar___voice">
         <SignalCellularAltIcon className='sidebar___voiceIcon' fontSize='large'>
         </SignalCellularAltIcon>
         <div className="sidebar___voiceInfo">
@@ -67,7 +67,7 @@ function Sidebar() {
     <div className="sidebar___voiceIcons">
         <CallIcon></CallIcon>
     </div>
-    </div>
+    </div> */}
     <div className="sidebar___profile">
       <Avatar onClick = { ()=>auth.signOut()} 
       src= {user.photo} alt = "https://i.pinimg.com/736x/65/c4/3f/65c43fc01c0ec482be114b9fb011b489.jpg"></Avatar>

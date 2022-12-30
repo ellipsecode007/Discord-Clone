@@ -7,13 +7,13 @@ import SendRoundedIcon from '@mui/icons-material/SendRounded';
 import HelpRoundedIcon from '@mui/icons-material/HelpRounded';
 
 
-function ChatHeader() {
+function ChatHeader({channelName}) {
   return (
     <div className='chatHeader'>
         <div className="chatHeader___left">
         <h3>
                 <span className="chatHeader___hash">#</span>
-                Valorant X
+                {channelName}
             </h3>
         </div>
         <div className="chatHeader___right">

@@ -6,6 +6,9 @@
     background-size: contain;
     background-image: url("https://www.riotgames.com/darkroom/1440/d0807e131a84f2e42c7a303bda672789:3d02afa7e0bfb75f645d97467765b24c/valorant-offwhitelaunch-keyart.jpg");
 }
+.login>h2{
+    background-color: #2f3135;
+}
 .login>button{
     width: 300px;
     background-color: #738adb;

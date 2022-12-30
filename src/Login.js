@@ -9,7 +9,7 @@ function Login() {
     }
   return (
     <div className='login'>
-        <h2>Login</h2>
+        <h2>Welcome to Valorant Chat Rooms</h2>
         <div className="login___logo">
             <img src="https://logos-world.net/wp-content/uploads/2020/12/Discord-Emblem.png" alt="" />
         </div>

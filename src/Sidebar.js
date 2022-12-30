@@ -36,7 +36,7 @@ function Sidebar() {
   return (
     <div className='sidebar'>
     <div className='sidebar___top'>
-      <h3>Ellipse Gaming</h3>
+      <h3>Valorant</h3>
       <ExpandMoreIcon></ExpandMoreIcon>
     </div>
     <div className="sidebar___channels">
@@ -44,7 +44,7 @@ function Sidebar() {
         <div className="sidebar___headers">
           <ExpandMoreIcon>
           </ExpandMoreIcon>
-          <h4>Text Channels</h4>
+          <h4>Chat Rooms</h4>
         </div>
         <AddIcon onClick={handleAddChannel} className='sidebar___addChannels'>
         </AddIcon>
